@@ -1,0 +1,22 @@
+<!--pages/detail-video/index.wxml-->
+<wxs src="../../../utils/format.wxs" module="format"></wxs>
+<video class="video" src="{{mvURLInfo.url}}" loop autoplay referrer-policy="origin"></video>
+
+<view class="info">
+  <view class="title">{{ mvDetail.name }}</view>
+  <view class="desc">{{ mvDetail.artistName }} - {{ mvInfo.alias[0] }}</view>
+  <view class="other">
+    <text class="play-count">{{format.formatCount(mvDetail.playCount)}}次播放 - </text>
+    <text class="publish-time">{{mvDetail.publishTime}}</text>
+  </view>
+</view>
+
+<!-- 推荐视频 -->
+<view class="recommend">
+   <area-header title="推荐视频" showRight="{{false}}"></area-header>
+   <view class="video-list">
+    <block wx:for="{{relateVideos}}" wx:key="vid">
+      <video-item-v2 itemInfo="{{item}}" bind:click="handleRecommendClick" data-item="{{item}}"></video-item-v2>
+    </block>
+   </view>
+</view>

@@ -1,0 +1,13 @@
+<!--components/vide-item-v2/index.wxml-->
+<view class="item" bindtap="handleVideoItemV2Click">
+    <view class="album">
+        <image class="image" mode="widthFix" src="{{itemInfo.coverUrl}}"></image>
+        <view class="info">
+            <text class="count">{{itemInfo.playTime}}</text>
+        </view>
+    </view>
+    <view class="content">
+        <view class="title">{{itemInfo.title}}</view>
+        <view class="nickname">{{itemInfo.creator[0].userName}}</view>
+    </view>
+</view>
