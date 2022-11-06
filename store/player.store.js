@@ -34,7 +34,7 @@ const playerStore = new HYEventStore({
       ctx.id = id
 
       // 0.修改播放的状态(换歌重置数据)
-      ctx.isPlaying = true,
+        ctx.isPlaying = true,
         ctx.currentSong = {},
         ctx.durationTime = 0,
         ctx.lyricInfos = [],
@@ -83,7 +83,6 @@ const playerStore = new HYEventStore({
         // 2.根据当前时间修改currentTime
         ctx.currentTime = currentTime
 
-
         // 3.根据当前时间去查找播放的歌词
         if (!ctx.lyricInfos.length) return
         let i = 0
@@ -93,6 +92,7 @@ const playerStore = new HYEventStore({
             break
           }
         }
+        
         // 设置当前歌词的索引和内容
         const currentIndex = i - 1
         if (ctx.currentLyricIndex !== currentIndex) {
